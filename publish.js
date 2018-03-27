@@ -27,7 +27,7 @@ const ossHtmlSetting = Object.assign({}, ossSetting, {
 		}
 	}
 })
-gulp.task('res', () => gulp.src(['dist/**/*', '!dist/**/*.html']).pipe(ossSync(ossSetting)))
+gulp.task('res', () => gulp.src(['dist/**/*', '!dist/**/*.html', '!dist/**/*.map']).pipe(ossSync(ossSetting)))
 gulp.task('html', ['res'], () => gulp.src('dist/**/*.html').pipe(ossSync(ossHtmlSetting)))
 
 gulp.task('default', ['html'])
